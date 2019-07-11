@@ -4,20 +4,21 @@
   "parameters": {
     "functionsAppName": {
       "type": "string",
+      "defaultValue": "customeramspipeline",
       "metadata": {
         "description": "The name of the Function application to be deployed. The name will automatically be made unique on deployment, all lowercase letters or numbers with no spaces."
       }
     },
     "functionKey": {
       "type": "string",
-      "defaultValue": "j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt",
+      "defaultValue": "eua0jN33QlGAjs53MPJqJW/vLt2P3Ej5OKUHr3sNzvYFTVDpCO7jaw==",
       "metadata": {
         "description": "Function App Key to use for authorization of Webhook. You should replace this with the key you want to use for your Function application authorization"
       }
     },
     "project": {
       "type": "string",
-      "defaultValue": "100-basic-encoding",
+      "defaultValue": "media-functions-for-logic-app",
       "allowedValues": [
         "100-basic-encoding",
         "101-notify-webhooks",
@@ -32,7 +33,7 @@
     },
     "sourceCodeRepositoryURL": {
       "type": "string",
-      "defaultValue": "ENTER PATH to YOUR FORK of https://github.com/Azure-Samples/media-services-dotnet-functions-integration",
+      "defaultValue": "https://github.com/wlhutchison/media-services-dotnet-functions-integration",
       "metadata": {
         "description": "Source code repository URL. Is is REQUIRED that you first fork the samples repository and point this to your fork. If you are using your own fork, you may see an error in deployment related to GitHub auth. We require this for your own good, as we may update and break your application or testing as we deploy new updates to the public samples repository."
       }
@@ -46,42 +47,42 @@
     },
     "mediaServicesAccountAzureActiveDirectoryTenantDomain": {
       "type": "string",
-      "defaultValue": "ENTER YOUR TENANT DOMAIN, Example: microsoft.onmicrosoft.com",
+      "defaultValue": "WLHutchisonmsn.onmicrosoft.com",
       "metadata": {
         "description": "Azure Active Directory tenant domain of your media services account."
       }
     },
     "mediaServicesAccountRestApiEndpoint": {
       "type": "string",
-      "defaultValue": "Example: https://accountname.restv2.region.media.azure.net/api/",
+      "defaultValue": "https://danceworksams.restv2.westus2-2.media.azure.net/api/",
       "metadata": {
         "description": "REST API endpoint of your media services account."
       }
     },
     "mediaServicesAccountServicePrincipalClientId": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "094b5769-a977-4ab8-be2e-4c79b6b71dc0",
       "metadata": {
         "description": "Service Principal Client ID to access your media services account. See https://docs.microsoft.com/en-us/azure/media-services/media-services-portal-get-started-with-aad#service-principal-authentication"
       }
     },
     "mediaServicesAccountServicePrincipalClientSecret": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "b8a5e7ad-2148-4012-ade1-4c9c23167f13",
       "metadata": {
         "description": "Service Principal Client Secret to access your media services account. See https://docs.microsoft.com/en-us/azure/media-services/media-services-portal-get-started-with-aad#service-principal-authentication"
       }
     },
     "mediaServicesStorageAccountName": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "danceworksmedia",
       "metadata": {
         "description": "Storage Accouunt Name of the Media Services account"
       }
     },
     "mediaServicesStorageAccountKey": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "UIeBJ1M+iiRUQohnAqecpjYbwWpRAgkcDVj/i6vzgq5iwigXAyH2GOukA6z/GUFFZ5P43KKc8yKDWdib9e7vmQ==",
       "metadata": {
         "description": "Storage Accouunt Key of the Media Services account"
       }
@@ -112,8 +113,8 @@
       "location": "[resourceGroup().location]",
       "comments": "This hosting plan is created to deploy the function app and set the billing sku tier",
       "sku": {
-        "name": "Y1",
-        "tier": "Dynamic",
+        "name": "S1",
+        "tier": "Standard",
         "size": "Y1",
         "family": "Y",
         "capacity": 0
@@ -186,9 +187,9 @@
             "AMSClientSecret": "[parameters('mediaServicesAccountServicePrincipalClientSecret')]",
             "MediaServicesStorageAccountName": "[parameters('mediaServicesStorageAccountName')]",
             "MediaServicesStorageAccountKey": "[parameters('mediaServicesStorageAccountKey')]",
-            "MediaServicesAttachedStorageCredentials": "",
+            "MediaServicesAttachedStorageCredentials": "danceworksmedia;UIeBJ1M+iiRUQohnAqecpjYbwWpRAgkcDVj/i6vzgq5iwigXAyH2GOukA6z/GUFFZ5P43KKc8yKDWdib9e7vmQ==;danceworksbusiness;im0+KPaGFFSuvEpZ/Ww2OtEklZPNuXe6hSsxayVah5wpwLYJZqwummM8TKTOrD1DbiFkTOOD3zE+qy9IJHxoCA==;danceworkscustomers;oCc792XXw1f6cfVsOHN3CAliBBqPo2lgXBlMRTF/1A/e6gnRW5k0qCsY9X1PnaF7kJnhgkmMSShkpD5jcJPs0g==",
             "StorageConnection": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]",
-            "SigningKey": "wOlDEUJ4/VN1No8HxVxpsRvej0DZrO5DXvImGLjFhfctPGFiMkUA0Cj8HSfJW7lePX9XsfHAMhw30p0yYqG+1A==",
+            "SigningKey": "nhgT4uj5FFNP4WMDggEl/2ARTuAR9jjYpTT6SdTjrRVDr3BDx/czpQ==",
             "WebHookEndpoint": "[concat(resourceId('Microsoft.Web/sites', variables('functionsAppName')),'/api/Notification_Webhook_Function?code=', parameters('functionKey'))]"
           }
         }
