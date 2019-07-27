@@ -162,13 +162,13 @@
       }
     },
     {
-      "FileName": "Thumbnail_{Resolution}_{Index}{Extension}",
+      "FileName": "Thumbnail_{Width}x{Height}_{Index}{Extension}",
       "Format": {
         "Type": "JpgFormat"
       }
     },
     {
-      "FileName": "Thumbnail_{Resolution}_{Index}{Extension}",
+      "FileName": "Thumbnail_{Width}x{Height}_{Index}{Extension}",
       "Format": {
         "Type": "PngFormat"
       }
