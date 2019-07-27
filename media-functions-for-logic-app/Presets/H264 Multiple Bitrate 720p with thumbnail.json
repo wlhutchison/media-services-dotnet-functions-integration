@@ -100,16 +100,60 @@
     },
     {
       "Start": "{Best}",
+      "Type": "JpgImage",
+      "JpgLayers": [
+        {
+          "Type": "JpgLayer",
+          "Width": 640,
+          "Height": 360
+        },
+        {
+          "Quality": 90,
+          "Type": "JpgLayer",
+          "Width": "50%",
+          "Height": "50%"
+        },
+        {
+          "Quality": 90,
+          "Type": "JpgLayer",
+          "Width": "25%",
+          "Height": "25%"
+        },
+        {
+          "Quality": 90,
+          "Type": "JpgLayer",
+          "Width": "10%",
+          "Height": "10%"
+        }
+      ]
+    },
+    {
+      "Start": "{Best}",
       "Type": "PngImage",
       "PngLayers": [
         {
           "Type": "PngLayer",
           "Width": 640,
           "Height": 360
+        },
+        {
+          "Type": "PngLayer",
+          "Width": "50%",
+          "Height": "50%"
+        },
+        {
+          "Type": "PngLayer",
+          "Width": "25%",
+          "Height": "25%"
+        },
+        {
+          "Type": "PngLayer",
+          "Width": "10%",
+          "Height": "10%"
         }
       ]
     }
-  ],
+ ],
   "Outputs": [
     {
       "FileName": "{Basename}_{Width}x{Height}_{VideoBitrate}.mp4",
@@ -118,7 +162,13 @@
       }
     },
     {
-      "FileName": "Thumbnail_{Index}{Extension}",
+      "FileName": "Thumbnail_{Resolution}_{Index}{Extension}",
+      "Format": {
+        "Type": "JpgFormat"
+      }
+    },
+    {
+      "FileName": "Thumbnail_{Resolution}_{Index}{Extension}",
       "Format": {
         "Type": "PngFormat"
       }
