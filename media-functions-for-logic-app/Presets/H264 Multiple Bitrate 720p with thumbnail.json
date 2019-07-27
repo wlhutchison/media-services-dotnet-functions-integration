@@ -104,26 +104,26 @@
       "JpgLayers": [
         {
           "Type": "JpgLayer",
-          "Width": "100%",
-          "Height": "100%"
+          "Width": 640,
+          "Height": 360
         },
         {
           "Quality": 90,
           "Type": "JpgLayer",
-          "Width": "50%",
-          "Height": "50%"
+          "Width": 320,
+          "Height": 180
         },
         {
           "Quality": 90,
           "Type": "JpgLayer",
-          "Width": "25%",
-          "Height": "25%"
+          "Width": 160,
+          "Height": 90
         },
         {
           "Quality": 90,
           "Type": "JpgLayer",
-          "Width": "10%",
-          "Height": "10%"
+          "Width": 96,
+          "Height": 96
         }
       ]
     },
@@ -133,23 +133,23 @@
       "PngLayers": [
         {
           "Type": "PngLayer",
-          "Width": "100%",
-          "Height": "100%"
+          "Width": 640,
+          "Height": 360
         },
         {
           "Type": "PngLayer",
-          "Width": "50%",
-          "Height": "50%"
+          "Width": 320,
+          "Height": 180
         },
         {
           "Type": "PngLayer",
-          "Width": "25%",
-          "Height": "25%"
+          "Width": 160,
+          "Height": 90
         },
         {
           "Type": "PngLayer",
-          "Width": "10%",
-          "Height": "10%"
+          "Width": 64,
+          "Height": 64
         }
       ]
     }
@@ -162,13 +162,13 @@
       }
     },
     {
-      "FileName": "Thumbnail_{Width}x{Height}_{Index}.jpg",
+      "FileName": "Thumbnail_{Resolution}{Extension}",
       "Format": {
         "Type": "JpgFormat"
       }
     },
     {
-      "FileName": "Thumbnail_{Width}x{Height}_{Index}.png",
+      "FileName": "Thumbnail_{Resolution}{Extension}",
       "Format": {
         "Type": "PngFormat"
       }
