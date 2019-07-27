@@ -94,10 +94,10 @@
                         "type": "ApiConnection"
                     },
                     "HTTP_Get_Thumbnail": {
-                        "inputs": {
-                            "method": "GET",
-                            "uri": "@{body('publish-asset')['pathUrl']}Thumbnail_160x90.png"
-                        },
+                      "inputs": {
+                        "method": "GET",
+                        "uri": "@{body('publish-asset')['pathUrl']}Thumbnail_160x90_000001.png"
+                      },
                         "runAfter": {
                             "return-subtitles": [
                                 "Succeeded"
