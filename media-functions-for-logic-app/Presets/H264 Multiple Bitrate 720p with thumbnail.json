@@ -104,8 +104,8 @@
       "JpgLayers": [
         {
           "Type": "JpgLayer",
-          "Width": 640,
-          "Height": 360
+          "Width": "100%",
+          "Height": "100%"
         },
         {
           "Quality": 90,
@@ -133,8 +133,8 @@
       "PngLayers": [
         {
           "Type": "PngLayer",
-          "Width": 640,
-          "Height": 360
+          "Width": "100%",
+          "Height": "100%"
         },
         {
           "Type": "PngLayer",
