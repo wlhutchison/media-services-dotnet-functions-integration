@@ -96,7 +96,7 @@
                     "HTTP_Get_Thumbnail": {
                       "inputs": {
                         "method": "GET",
-                        "uri": "@{body('publish-asset')['pathUrl']}Thumbnail_160x90_000001.png"
+                        "uri": "@{body('publish-asset')['pathUrl']}Thumbnail_000001.png"
                       },
                         "runAfter": {
                             "return-subtitles": [
